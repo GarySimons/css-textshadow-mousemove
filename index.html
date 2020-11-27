@@ -44,7 +44,10 @@
         // alt ES6 is: const { offsetWidth: width, offsetHeight: height } = hero;
         let {offsetX: x, offsetY: y } = e; // tracks x and y points on page
 
-        console.log(x, y);
+        if (this !== e.target) { // if 'this' and event target are not =. offset x & y
+            x = x + e.target.offsetLeft; 
+            y = y + e.target.offsetTop;
+        }
     }
 
     hero.addEventListener('mousemove', shadow); // listen for mousemove and run shadow function
