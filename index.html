@@ -54,7 +54,11 @@
         const xWalk = Math.round((x / width * walk) - (walk / 2)); // Math.round, rounds down the number
         const yWalk = Math.round((y / height * walk) - (walk / 2)); // how far shadow will walk
 
-        text.style.textShadow = `${xWalk}px ${yWalk}px 0 red`; // shadow move, blur and colour
+        text.style.textShadow = `
+        ${xWalk}px ${yWalk}px 0 rgba(255,0,255,0.7),
+        ${xWalk * -1}px ${yWalk}px 0 rgba(0,255,255,0.7)
+        `; 
+        
 
   }
 
